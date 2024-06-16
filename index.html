@@ -12,12 +12,13 @@
     <div class="circle">
         <p class="username">bloodstain</p>
     </div>
-    <audio id="music" autoplay>
+    <iframe src="music.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+    <audio id="music" autoplay loop>
         <source src="music.mp3" type="audio/mp3">
     </audio>
     <script>
         var music = document.getElementById("music");
-        music.volume = 0.3;
+        music.volume = 0.25;
     </script>
 </body>
 </html>
