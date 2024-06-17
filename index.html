@@ -2,16 +2,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bloodstain.lol</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="title"></title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="square"></div>
     <div class="circle">
         <p class="username">bloodstain</p>
     </div>
+<!--   <img src="cross-transparent-gothic-3.png" alt="Cross" class="cross">
+    </div>-->
     <audio id="music" autoplay loop>
         <source src="music.mp3" type="audio/mp3">
     </audio>
@@ -19,5 +21,46 @@
         var music = document.getElementById("music");
         music.volume = 0.25;
     </script>
+    <script>
+    const titleElement = document.getElementById("title");
+    const randomTitles = [
+      "Bloodstain LOL",
+      "Gothic Vibes Only",
+      "Darkness Descends",
+      "Shadow Realm",
+      "Eternal Night",
+      "Midnight Eclipse",
+      "Crimson Requiem",
+      "Raven's Wings",
+      "Haunted Dreams",
+      "Forever Lost",
+      "Shadows Dance",
+      "Moonlit Serenade",
+      "Whispering Winds",
+      "Ghostly Apparitions",
+      "Spellbound",
+      "Dark Magic",
+      "Wicked Intentions",
+      "Sinister Forces",
+      "Ominous Omens",
+      "Cursed Fate",
+      "Eternal Darkness"
+    ];
+  
+    let previousTitle = "";
+  
+    function getRandomTitle() {
+      let newTitle = randomTitles[Math.floor(Math.random() * randomTitles.length)];
+      while (newTitle === previousTitle) {
+        newTitle = randomTitles[Math.floor(Math.random() * randomTitles.length)];
+      }
+      previousTitle = newTitle;
+      return newTitle;
+    }
+  
+    setInterval(() => {
+      titleElement.textContent = getRandomTitle();
+    }, 100); // 200ms = 0.2 seconds
+  </script>
 </body>
 </html>

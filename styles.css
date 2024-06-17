@@ -59,7 +59,22 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-}
+    color: rgb(0, 0, 0); /* Set the text color to black */
+    text-shadow: 0 0 5px rgba(15, 15, 15, 0.8),
+                 0 0 10px rgba(10, 10, 10, 0.6),
+                 0 0 15px rgba(5, 5, 5, 0.4);
+    font-weight: bold;
+  }
 
 
+
+/* styles.css */
+.cross {
+    position: absolute; /* changed from absolute to relative */
+    display: block; /* added to ensure the image is displayed */
+    margin: 20px auto; /* added to center the image horizontally */
+    z-index: 1; /* keep the z-index to ensure it's not overlapped */
+    width: 50px; /* adjust the width to your liking */
+    height: 50px; /* adjust the height to your liking */
+  }
 
