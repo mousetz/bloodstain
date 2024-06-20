@@ -71,10 +71,105 @@ body {
 /* styles.css */
 .cross {
     position: absolute; /* changed from absolute to relative */
-    display: block; /* added to ensure the image is displayed */
     margin: 20px auto; /* added to center the image horizontally */
     z-index: 1; /* keep the z-index to ensure it's not overlapped */
     width: 50px; /* adjust the width to your liking */
     height: 50px; /* adjust the height to your liking */
   }
 
+
+/* update the styles to position the badges under the username */
+.badges {
+    width: 132px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5); /* transparent black background */
+    top: 140%; /* lower the badges by 5% */
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    padding: 5px 2px 5px 5px;
+    border-radius: 10px;
+    border: solid #ebebeb40 1px;
+    display: flex;
+    margin: 5px 0;
+    position: relative;
+    flex-wrap: wrap; /* add this to wrap the icons to the next line */
+    justify-content: space-between; /* add this to space out the icons */
+  }
+
+.badge-icon {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px; /* add some space around the icon */
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5); /* reduce the glow radius by 20% */
+  border-radius: 5px; /* add a border radius to make the corners of the icon smooth */
+  position: relative; /* add a relative position to the icon */
+}
+
+.tooltip {
+  display: none; /* hide the tooltip by default */
+  position: absolute;
+  bottom: 50px; /* position the tooltip right above the icon */
+  left: 20%;
+  transform: translateX(-50%);
+  background-color: #000; /* pure black background */
+  color: #660000; /* dark red text color */
+  padding: 10px 15px; /* increase the padding to make the tooltip bigger */
+  border-radius: 5px;
+  font-size: 15px; /* increase the font size to make the text bigger */
+  font-family: 'Reddit Mono', sans-serif; /* use the Reddit Mono font */
+  font-weight: bold; /* use a thick font */
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.8); /* add a glowing red text shadow */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* add a subtle shadow */
+}
+
+.badge-icon:hover +.tooltip {
+  display: block; /* show the tooltip on hover */
+}
+
+
+.tooltip-2 {
+    display: none; /* hide the tooltip by default */
+    position: absolute;
+    bottom: 50px; /* position the tooltip right above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000; /* pure black background */
+    color: #660000; /* dark red text color */
+    padding: 10px 15px; /* increase the padding to make the tooltip bigger */
+    border-radius: 5px;
+    font-size: 15px; /* increase the font size to make the text bigger */
+    font-family: 'Reddit Mono', sans-serif; /* use the Reddit Mono font */
+    font-weight: bold; /* use a thick font */
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8); /* add a glowing red text shadow */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* add a subtle shadow */
+
+}
+
+
+
+.tooltip-3 {
+    display: none; /* hide the tooltip by default */
+    position: absolute;
+    bottom: 50px; /* position the tooltip right above the icon */
+    left: 85%;
+    transform: translateX(-50%);
+    background-color: #000; /* pure black background */
+    color: #660000; /* dark red text color */
+    padding: 10px 15px; /* increase the padding to make the tooltip bigger */
+    border-radius: 5px;
+    font-size: 15px; /* increase the font size to make the text bigger */
+    font-family: 'Reddit Mono', sans-serif; /* use the Reddit Mono font */
+    font-weight: bold; /* use a thick font */
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8); /* add a glowing red text shadow */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* add a subtle shadow */
+}
+
+.badge-icon:hover +.tooltip-2 {
+    display: block; /* show the tooltip on hover */
+  }
+
+
+.badge-icon:hover +.tooltip-3 {
+  display: block; /* show the tooltip on hover */
+}
