@@ -10,7 +10,7 @@
 <body>
     <div class="square"></div>
     <div class="circle">
-      <p class="username">bloodstain</p>
+      <p class="username" id="username">bloodstain</p>
       <div class="badges">
         <img src="cross-transparent-gothic-3.png" alt="cross" class="badge-icon">
         <span class="tooltip">vampire</span>
@@ -71,5 +71,16 @@
       titleElement.textContent = getRandomTitle();
     }, 100); // 200ms = 0.2 seconds
   </script>
+  <!--
+  <script>
+    fetch('/username')
+   .then((response) => response.json())
+   .then((data) => {
+      const usernameElement = document.getElementById('username');
+      usernameElement.textContent = data.username;
+    })
+   .catch((error) => console.error(error));
+  </script>
+  -->
 </body>
 </html>
