@@ -1,0 +1,36 @@
+<!-- update-username.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Username</title>
+</head>
+<body>
+  <h1>Update Username</h1>
+  <form id="update-username-form">
+    <label for="new-username">New Username:</label>
+    <input type="text" id="new-username" name="new-username">
+    <button type="submit">Update</button>
+  </form>
+
+  <script>
+    const form = document.getElementById('update-username-form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const newUsername = document.getElementById('new-username').value;
+      fetch('/update-username', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username: newUsername }),
+      })
+     .then((response) => response.json())
+     .then((data) => {
+        console.log(data.message);
+        window.location.href = '/'; // redirect back to index.html
+      })
+     .catch((error) => console.error(error));
+    });
+  </script>
+</body>
+</html>

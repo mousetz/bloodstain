@@ -103,82 +103,71 @@ body {
     justify-content: space-between; /* add this to space out the icons */
   }
 
-.badge-icon {
-  width: 30px;
-  height: 30px;
-  margin: 0 5px; /* add some space around the icon */
-  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5); /* reduce the glow radius by 20% */
-  border-radius: 5px; /* add a border radius to make the corners of the icon smooth */
-  position: relative; /* add a relative position to the icon */
+  .badge-icon {
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.badge-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.tooltip, .tooltip-2, .tooltip-3 {
+  display: none;
+  position: absolute;
+  bottom: 50px;
+  background-color: #000;
+  color: #660000;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-family: 'Reddit Mono', sans-serif;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transform: translateX(-50%) translateY(20px); /* add this to set initial position */
+  opacity: 0; /* add this to set initial opacity to 0 */
+  z-index: 3;
 }
 
 .tooltip {
-  display: none; /* hide the tooltip by default */
-  position: absolute;
-  bottom: 50px; /* position the tooltip right above the icon */
   left: 20%;
   transform: translateX(-50%);
-  background-color: #000; /* pure black background */
-  color: #660000; /* dark red text color */
-  padding: 10px 15px; /* increase the padding to make the tooltip bigger */
-  border-radius: 5px;
-  font-size: 15px; /* increase the font size to make the text bigger */
-  font-family: 'Reddit Mono', sans-serif; /* use the Reddit Mono font */
-  font-weight: bold; /* use a thick font */
-  text-shadow: 0 0 10px rgba(255, 0, 0, 0.8); /* add a glowing red text shadow */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* add a subtle shadow */
 }
-
-.badge-icon:hover +.tooltip {
-  display: block; /* show the tooltip on hover */
-}
-
-
 
 .tooltip-2 {
-    display: none; /* hide the tooltip by default */
-    position: absolute;
-    bottom: 50px; /* position the tooltip right above the icon */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #000; /* pure black background */
-    color: #660000; /* dark red text color */
-    padding: 10px 15px; /* increase the padding to make the tooltip bigger */
-    border-radius: 5px;
-    font-size: 15px; /* increase the font size to make the text bigger */
-    font-family: 'Reddit Mono', sans-serif; /* use the Reddit Mono font */
-    font-weight: bold; /* use a thick font */
-    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8); /* add a glowing red text shadow */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* add a subtle shadow */
-
+  left: 50%;
+  transform: translateX(-50%);
 }
-
-
 
 .tooltip-3 {
-    display: none; /* hide the tooltip by default */
-    position: absolute;
-    bottom: 50px; /* position the tooltip right above the icon */
-    left: 85%;
-    transform: translateX(-50%);
-    background-color: #000; /* pure black background */
-    color: #660000; /* dark red text color */
-    padding: 10px 15px; /* increase the padding to make the tooltip bigger */
-    border-radius: 5px;
-    font-size: 15px; /* increase the font size to make the text bigger */
-    font-family: 'Reddit Mono', sans-serif; /* use the Reddit Mono font */
-    font-weight: bold; /* use a thick font */
-    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8); /* add a glowing red text shadow */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* add a subtle shadow */
+  left: 85%;
+  transform: translateX(-50%);
 }
 
-.badge-icon:hover +.tooltip-2 {
-    display: block; /* show the tooltip on hover */
+.badge-icon:hover + .tooltip,
+.badge-icon:hover + .tooltip-2,
+.badge-icon:hover + .tooltip-3 {
+  display: block;
+  animation: slideIn 0.3s forwards; /* add this to trigger the animation */
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-50%) translateY(20px);
+    opacity: 0;
   }
-
-
-.badge-icon:hover +.tooltip-3 {
-  display: block; /* show the tooltip on hover */
+  100% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
 }
 
 
